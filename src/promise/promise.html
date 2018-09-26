@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>promise</title>
+  <script src='./promise.js'></script>
+</head>
+
+<body>
+<h1>Please press F12 to open console.</h1>
+</body>
+
+<script>
+    function getPromise(url) {
+      return new myPromise(function(resolve, reject) {
+        var image = new Image();
+        image.onload = function() {
+          resolve(url);
+        }
+        image.onerror = function() {
+          reject(new Error('Invalid path ' + url));
+        }
+        image.src = url;
+      });
+    }
+    var p1 = getPromise('https://cdn.v2ex.com/gravatar/aa7c77bd8d97c61e926634d07e731719?s=48&d=retro');
+    var p2 = getPromise('http://cnd.asda.com/asdaasdasdafgafaer.png');
+    // p1.then(function(res) {
+    //   console.dir(res);
+    //   return res;
+    // }).then(function(res) {
+    //   console.dir(res);
+    //   return res;
+    // }).then(function(res) {
+    //   console.dir(res);
+    //   return res;
+    // }).finally(function() {
+    //   console.log(1);
+    // });
+    p2.then(function(res) {
+      console.log(1);
+      return res;
+    }).catch(function(e) {
+      console.log(2);
+      return e;
+    }).finally(function() {
+      console.log(3);
+      p1.then(function(res) {
+        console.dir(res);
+      })
+    });
+    // myPromise.race([p1, p1, p1]).then(res => console.dir(res));
+    // Promise.all([p2, p2, p2]).then(res => console.dir(res));
+</script>
+</html>
