@@ -26,7 +26,7 @@
         var dataAsQueryString = '';
         Object.prototype.toString.call(data) === '[object Object]' ? (
             dataAsQueryString = Object.keys(data).reduce(function(str, item) {
-                return (!str ? '' : '&') + item + data[item];
+                return (!str ? '' : str + '&') + item + '=' + data[item];
             }, '')
         ) : ( dataAsQueryString = data )
         return dataAsQueryString;
