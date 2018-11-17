@@ -15,5 +15,16 @@ npm run dev
 
 ### 什么玩意儿
 
-* MVVM
+* [MVVM](https://github.com/inbeen/mimic/tree/master/src/mvvm)
+* [Call apply bind](https://github.com/inbeen/mimic/tree/master/src/call-apply-bind)
+* [Promise](https://github.com/inbeen/mimic/tree/master/src/promise)
+* [Debounce-throttle](https://github.com/inbeen/mimic/tree/master/src/debounce-throttle)
+* [Set](https://github.com/inbeen/mimic/tree/master/src/set)
+* [Partial](https://github.com/inbeen/mimic/tree/master/src/partial)
+* [Curry](https://github.com/inbeen/mimic/tree/master/src/curry)
+* [Ajax](https://github.com/inbeen/mimic/tree/master/src/ajax)
+* [Drag](https://github.com/inbeen/mimic/tree/master/src/drag)
+* [Jsonp](https://github.com/inbeen/mimic/tree/master/src/jsonp)
+
+* [React](https://github.com/inbeen/mimic/tree/master/src/react)
 
