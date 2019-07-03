@@ -41,3 +41,41 @@ class MVVM {
 window.MVVM = MVVM;
 
 export default MVVM;
+
+// test
+document.getElementById('app').innerHTML = `
+<span style='display: inline-block;width: 100px;text-align: right;margin-right: 10px; overflow: hidden;' v-html='a'></span>
+<input type='text' style='margin-right: 20px;' v-model='a'>
+<input type='text' v-model='a'>
+<p>----------------------------------------------------------------------</p>
+<button v-on:click="change(10, '测试'函数'参数')">click it!</button>
+<div>The button above has been clicked <span>{{ clicks.count }}</span> times.</div>
+<div>(Click the button above) Your scores: <span>{{ clicks.score }}</span></div>
+<p>----------------------------------------------------------------------</p>
+<div>数组的长度为：
+    <span style='display: inline-block;width: 30px;text-align: right;margin-right: 10px;'>{{ arr.length }}</span>
+    <button v-on:click="randomPush">点击我添加数组元素</button><br>
+    数组第一个元素为：<span>{{ arr[0] }}</span><br>
+</div>`;
+
+window.vm = new window.MVVM({
+    el: '#app',
+    data: {
+        a: '输入',
+        clicks: {
+            count: 0,
+            score: 0
+        },
+        arr: ['按上面按钮添加']
+    },
+    methods: {
+        change: function(n, s) {
+            this.clicks.count ++;
+            this.clicks.score += n;
+            console.log(s);
+        },
+        randomPush: function() {
+            this.arr.unshift(Math.random());
+        }
+    }
+})

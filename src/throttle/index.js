@@ -1,11 +1,3 @@
-var count = 1;
-var container = document.getElementById('container');
-
-function getUserAction(e) {
-    console.dir(e);
-    container.innerHTML = count ++;
-}
-
 function throttle(func, delay, options) {
     var ctx, args, timeout;
     var previous = 0;
@@ -40,6 +32,38 @@ function throttle(func, delay, options) {
         timeout = null;
     }
     return throttled;
+}
+
+// test
+
+document.getElementById('app').innerHTML = `
+<div id='container' style='
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 300px;
+    background: #666;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 300px;'></div>
+<button id='btn' style='
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    padding: 10px 50px;'>重置节流</button>
+`;
+
+var count = 1;
+var container = document.getElementById('container');
+
+function getUserAction(e) {
+    console.dir(e);
+    container.innerHTML = count ++;
 }
 
 var userAction = throttle(getUserAction, 5000, {

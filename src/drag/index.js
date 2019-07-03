@@ -24,3 +24,28 @@ function Drag(el, direction) {
         }
     });
 }
+
+// test
+document.getElementById('app').innerHTML = `
+<div id='drag' style='
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 200px;
+    top: 100px;
+    background: #4396ea;
+    cursor: move;'></div>
+<div id='drag1' style='
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 200px;
+    top: 100px;
+    background: #666;
+    cursor: move;'></div>
+`;
+
+var test = document.getElementById('drag');
+var test1 = document.getElementById('drag1');
+new Drag(test, '');
+new Drag(test1, '');

@@ -87,7 +87,16 @@
             cb.call(thisArg, item[1], item[0], self);
         });
     }
-    mySet.length = 0;
+    mySet.prototype.length = 0;
     global.mySet = mySet;
-})(this)
+})(window)
+
+// test
+document.getElementById('app').innerHTML = `<h1>Please press F12 to open console.</h1>`;
+
+var set1 = new mySet([1, 2, 3, NaN, NaN]);
+var set2 = new mySet(new Set([4, 5, 6]));
+set2.forEach((v, i) => {
+    console.log(v, i);
+});
 

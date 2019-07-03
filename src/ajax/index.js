@@ -44,3 +44,13 @@
     }
     global.ajax = ajax;
 })(window)
+
+// test
+document.getElementById('app').innerHTML = `<h1>Please press F12 to open console.</h1>`;
+
+ajax({
+    type: 'GET',
+    url: 'https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312',
+}).then(res => {
+    console.dir(res);
+});

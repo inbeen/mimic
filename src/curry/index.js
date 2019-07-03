@@ -36,3 +36,12 @@ function curry(fn, args, argsNum, index) {
 }
 
 curry.empty = Symbol('');
+
+// test
+document.getElementById('app').innerHTML = `<h1>Please press F12 to open console.</h1>`;
+
+var fn = curry(function(a, b, c, d) {
+    return [a, b, c, d];
+});
+let a = fn(1, curry.empty, 3)(2, 4);
+console.dir(a);

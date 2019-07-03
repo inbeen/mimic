@@ -50,3 +50,21 @@ Function.prototype.mybind = function(ctx) {
     func.prototype = new fNOOP();
     return func;
 }
+
+// test
+document.getElementById('app').innerHTML = `<h1>Please press F12 to open console.</h1>`;
+
+var foo = {
+    value: true
+};
+function bar(a = 0, b = 0) {
+    if (this.value) {
+        return a + b;
+    } else return a - b;
+}
+console.log('------- call -------');
+console.log('result:', bar.mycall(foo, 1 , 2));
+console.log('------- apply ------');
+console.log('result:', bar.myapply(foo, [3]));
+console.log('------- bind -------');
+console.log('result:', bar.mybind(foo)(4, 5));

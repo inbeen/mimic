@@ -13,3 +13,12 @@ function partial(fn) {
 }
 
 partial.empty = Symbol('');
+
+// test
+document.getElementById('app').innerHTML = `<h1>Please press F12 to open console.</h1>`;
+
+var fn = partial(function(a, b, c, d) {
+    return [a, b, c, d];
+}, partial.empty, 2, 3);
+let a = fn(1, 4);
+console.dir(a);

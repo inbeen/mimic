@@ -25,3 +25,12 @@ function jsonp(url, data, callback) {
         return dataAsQueryString;
     }
 }
+
+// test
+jsonp('http://api.douban.com/v2/movie/top250', {
+    start: 1,
+    count: 5
+}, function(res) {
+    console.dir(res);
+});
+jsonp('http://api.douban.com/v2/movie/top250?start=1&count=1');

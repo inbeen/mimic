@@ -1,14 +1,17 @@
 const path = require('path')
-// const webpack = require('webpack')
+const { AutoWebPlugin } = require('web-webpack-plugin')
+
+const autoWebPlugin = new AutoWebPlugin('src', {
+    template: './template.html',
+    commonsChunk: {
+        name: 'common'
+    }
+})
 
 module.exports = {
-    entry: {
-        index: path.resolve(__dirname, 'src', 'index.js'),
-        mvvm: path.resolve(__dirname, 'src', 'mvvm', 'index.js'),
-        react: path.resolve(__dirname, 'src', 'react', 'index.jsx')
-    },
+    entry: autoWebPlugin.entry({}),
     output:{
-        path: path.resolve(__dirname, 'src'),
+        path: path.resolve(__dirname, './dist'),
         publicPath: '/',
         filename: '[name].js'
     },
@@ -37,10 +40,11 @@ module.exports = {
         ]
     },
     plugins: [
+        autoWebPlugin
     ],
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'src'),
+        contentBase: path.resolve(__dirname, './dist'),
         port: 9000,
     }
 }
