@@ -13,4 +13,5 @@ app.innerHTML = `
     <h4><a href='./react.html'>react</a></h4>
     <h4><a href='./promise.html'>promise</a></h4>
     <h4><a href='./set.html'>set</a></h4>
+    <h4><a href='./lazyload.html'>lazyload</a></h4>
 `;

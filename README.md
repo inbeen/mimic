@@ -18,13 +18,13 @@ npm run dev
 * [MVVM](https://github.com/inbeen/mimic/tree/master/src/mvvm)
 * [Call apply bind](https://github.com/inbeen/mimic/tree/master/src/call-apply-bind)
 * [Promise](https://github.com/inbeen/mimic/tree/master/src/promise)
-* [Debounce-throttle](https://github.com/inbeen/mimic/tree/master/src/debounce-throttle)
+* [Debounce-throttle](https://github.com/inbeen/mimic/tree/master/src/debounce)
 * [Set](https://github.com/inbeen/mimic/tree/master/src/set)
 * [Partial](https://github.com/inbeen/mimic/tree/master/src/partial)
 * [Curry](https://github.com/inbeen/mimic/tree/master/src/curry)
 * [Ajax](https://github.com/inbeen/mimic/tree/master/src/ajax)
 * [Drag](https://github.com/inbeen/mimic/tree/master/src/drag)
 * [Jsonp](https://github.com/inbeen/mimic/tree/master/src/jsonp)
-
 * [React](https://github.com/inbeen/mimic/tree/master/src/react)
+* [Lazyload](https://github.com/inbeen/mimic/tree/master/src/lazyload)
 
